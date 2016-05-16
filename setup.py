@@ -31,7 +31,8 @@ setup(
     license='Apache License 2.0',
     zip_safe=False,
     packages=[
-        'asphalt.filewatcher'
+        'asphalt.filewatcher',
+        'asphalt.filewatcher.watchers'
     ],
     setup_requires=[
         'setuptools_scm >= 1.7.0',
