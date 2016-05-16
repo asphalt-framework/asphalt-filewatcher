@@ -34,7 +34,7 @@ def event_queue(watcher: FileWatcher):
     return queue
 
 
-@pytest.fixture(params=['inotify', 'windows', 'poll'])
+@pytest.fixture(params=['inotify', 'windows', 'kqueue', 'poll'])
 def watcher_type(request):
     return request.param
 
@@ -47,7 +47,7 @@ def watcher(request, testdir, watcher_type, event_loop):
     try:
         watcher = create_watcher(testdir, events=events, recursive=True, backend=watcher_type,
                                  **kwargs)
-    except ImportError:
+    except (ImportError, AttributeError):
         return pytest.skip('The "%s" watcher is not available on this platform' % watcher_type)
 
     watcher.start()
