@@ -53,7 +53,11 @@ def watcher(request, testdir, watcher_type, event_loop):
     watcher.start()
     yield watcher
     watcher.stop()
-    event_loop.run_until_complete(wait(Task.all_tasks(event_loop)))
+
+    # Finish any leftover tasks
+    all_tasks = Task.all_tasks(event_loop)
+    if all_tasks:
+        event_loop.run_until_complete(wait(all_tasks))
 
 
 @pytest.mark.skipif(platform.system() == 'Windows',
