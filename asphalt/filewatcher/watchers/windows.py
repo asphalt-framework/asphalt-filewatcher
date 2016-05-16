@@ -89,7 +89,7 @@ class WindowsFileWatcher(FileWatcher):
             offset = 0
             while True:
                 notify_info = ffi.cast('FILE_NOTIFY_INFORMATION *',
-                                       notify_info_buffer[offset:offset+NOTIFY_STRUCT_SIZE])
+                                       notify_info_buffer[offset:offset + NOTIFY_STRUCT_SIZE])
                 event_type = _action_map[notify_info.Action]
                 pathname = ffi.string(notify_info.FileName, notify_info.FileNameLength)
                 if event_type in self.events:

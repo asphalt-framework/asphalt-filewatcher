@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from asphalt.filewatcher.api import FilesystemEvent, FileWatcher, FileEventType
+from asphalt.filewatcher.api import FilesystemEvent, FileWatcher
 
 
 class DummyFileWatcher(FileWatcher):

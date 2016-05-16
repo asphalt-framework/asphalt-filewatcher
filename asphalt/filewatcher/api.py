@@ -7,7 +7,7 @@ from typeguard import check_argument_types
 
 from asphalt.core import Event, Signal
 
-__all__ = ('FileEventType', 'FilesystemEvent', 'FileMoveEvent', 'FileWatcher')
+__all__ = ('FileEventType', 'FilesystemEvent', 'FileWatcher')
 
 
 class FileEventType(Enum):
