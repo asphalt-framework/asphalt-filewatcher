@@ -1,8 +1,9 @@
-Asphalt-filewatcher documentation
-=================================
+.. include:: ../README.rst
+   :start-line: 7
+   :end-before: Project links
 
-Asphalt-filewatcher provides the ability to watch changes in the file system – file modifications,
-deletions, creations etc. It uses Asphalt's native event system to dispatch the notifications.
+Table of contents
+-----------------
 
 .. toctree::
    :maxdepth: 2
@@ -10,8 +11,5 @@ deletions, creations etc. It uses Asphalt's native event system to dispatch the 
    configuration
    usage
    versionhistory
-
-Indices and tables
-==================
 
 * :ref:`API reference <modindex>`
