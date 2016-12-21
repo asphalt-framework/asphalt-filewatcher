@@ -26,7 +26,8 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5'
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6'
     ],
     license='Apache License 2.0',
     zip_safe=False,
@@ -34,14 +35,14 @@ setup(
         'asphalt.filewatcher',
         'asphalt.filewatcher.watchers'
     ],
+    cffi_modules=cffi_modules,
     setup_requires=[
         'setuptools_scm >= 1.7.0',
-        'cffi >= 1.4.1'
+        'cffi >= 1.8.1; platform_system == "Linux" or platform_system == "Windows"'
     ],
-    cffi_modules=cffi_modules,
     install_requires=[
         'asphalt ~= 2.0',
-        'cffi >= 1.4.1'
+        'cffi >= 1.8.1; platform_system == "Linux" or platform_system == "Windows"'
     ],
     entry_points={
         'asphalt.components': [
